@@ -1,0 +1,7 @@
+- the model is working only for the 2D images
+- them del returns 2 matrix i.e. kr, box
+    - kr is 2 coordinates each for 21 landmarks
+    - box is the box coordinates containing hand
+- The inference time is about 500ms for images of 640x640
+- the output is a little off after image resizing
+- we do not need the box for our model.
