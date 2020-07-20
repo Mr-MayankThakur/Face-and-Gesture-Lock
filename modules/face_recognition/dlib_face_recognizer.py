@@ -75,3 +75,5 @@ def generate_face_compare_fn(saved_feature_vector):
     :return: partial functool wrapper for compare face function
     """
     return partial(compare_face, saved_feature_vector)
+
+# todo save face description function with more sampling of the face descriptor function for accuracy
