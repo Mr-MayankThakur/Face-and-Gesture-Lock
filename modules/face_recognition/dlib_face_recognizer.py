@@ -64,7 +64,7 @@ def compare_face(vec1, vec2):
     :return: float
         Euclidean distance between the feature vectors
     """
-    return np.linalg.norm(vec1, vec2)
+    return np.linalg.norm(vec1 - vec2)
 
 
 def generate_face_compare_fn(saved_feature_vector):
