@@ -5,7 +5,7 @@ import numpy as np
 from functools import partial
 
 
-def recognize_face(img, face_recognizer, shape_predictor, bounding_box_coordinates):
+def recognize_face(img, face_recognizer, shape_predictor, bounding_box_coordinates, net_jitter=None):
     """
     Converts the cropped face image into 128D Feature vector
     Note: image size should be 128x128x3
@@ -34,7 +34,10 @@ def recognize_face(img, face_recognizer, shape_predictor, bounding_box_coordinat
     face_chip = dlib.get_face_chip(img, shape)
 
     # Now we simply pass this chip (aligned image) to the api
-    return np.array(face_recognizer.compute_face_descriptor(face_chip))
+    if net_jitter:
+        return np.array(face_recognizer.compute_face_descriptor(face_chip, net_jitter))
+    else:
+        return np.array(face_recognizer.compute_face_descriptor(face_chip))
 
 
 def initialize_models(face_recognizer_path, shape_predictor_path):
@@ -64,7 +67,7 @@ def compare_face(vec1, vec2):
     :return: float
         Euclidean distance between the feature vectors
     """
-    return np.linalg.norm(vec1 - vec2)
+    return np.linalg.norm(vec1 - vec2, axis=0)
 
 
 def generate_face_compare_fn(saved_feature_vector):
