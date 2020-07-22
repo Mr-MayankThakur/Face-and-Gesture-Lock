@@ -127,7 +127,7 @@ class HandTracker():
         candidate_anchors = self.anchors[detecion_mask]
 
         if candidate_detect.shape[0] == 0:
-            print("No hands found")
+            #print("No hands found")
             return None, None, None
         # picking the widest suggestion while NMS is not implemented
         max_idx = np.argmax(candidate_detect[:, 3])
