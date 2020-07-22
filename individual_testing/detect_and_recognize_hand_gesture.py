@@ -7,7 +7,7 @@ import numpy as np
 import time
 
 # gesture file path (.npy)
-gesture_path = '../modules/hand_tracking/temp/saved_gesture/gesture1_1.npy'
+gesture_path = '../data/gesture_data/gesture_encodings/gesture1_1.npy'
 saved_gesture = np.load(gesture_path, allow_pickle=True)
 
 gesture_score = generate_gesture_score_fn(saved_gesture)
