@@ -1,6 +1,7 @@
 # refer https://stackoverflow.com/a/18927641
 
 import numpy as np
+from functools import partial
 
 
 def reduced_procrustes(X, Y, scaling=True, reflection='best'):  # this funciton is about 3ms faster than original_procrustes
@@ -87,6 +88,16 @@ def reduced_procrustes(X, Y, scaling=True, reflection='best'):  # this funciton 
         d = 1 + ssY/ssX - 2 * traceTA * normY / normX
 
     return d
+
+
+def generate_gesture_score_fn(saved_gesture):
+    """
+    Returns reduced_procrustes function wrapped with functools partial function.
+    You just have to pass the new gesture to the returned function to get score
+
+    :param saved_gesture: numpy array
+    """
+    return partial(reduced_procrustes, X=saved_gesture)
 
 
 def original_procrustes(X, Y, scaling=True, reflection='best'):
