@@ -20,11 +20,11 @@ def generate_face_embeddings(path):
 
 def main():
     # initialise video input and Face Detector
-    face_detector = FaceDetector('modules/face_detector/data/face_detection_front.tflite')
+    face_detector = FaceDetector('../modules/face_detector/data/face_detection_front.tflite')
 
     # intitalize face recognizer
-    predictor_path = "modules/face_recognition/data/shape_predictor_5_face_landmarks.dat"
-    face_rec_model_path = "modules/face_recognition/data/dlib_face_recognition_resnet_model_v1.dat"
+    predictor_path = "../modules/face_recognition/data/shape_predictor_5_face_landmarks.dat"
+    face_rec_model_path = "../modules/face_recognition/data/dlib_face_recognition_resnet_model_v1.dat"
 
     # Load all the models we need: a shape predictor
     # to find face landmarks so we can precisely localize the face, and finally the
@@ -34,11 +34,10 @@ def main():
     facerec = dlib.face_recognition_model_v1(face_rec_model_path)
 
     # import predefined feature vector here
-    my_feature_vec, names = generate_face_embeddings('modules/temp/vectors/*.npy')
+    my_feature_vec, names = generate_face_embeddings('../data/face_data/face_encodings/*.npy')
     # intitalize the generate_face_compare_fn with it
     face_score = generate_face_compare_fn(my_feature_vec)
 
-    # capture = cv2.VideoCapture('./videoplayback_1.mp4')
     #capture = cv.VideoCapture(0)
     # parallel threaded capture
     vs = WebcamVideoStream().start()
@@ -51,17 +50,11 @@ def main():
     while (True):
         #ret, img = capture.read()
         img = vs.read()
-        ret = True
-
-        # img = cv2.imread('./test_image.jpg')
-
-
-        img_height = img.shape[0]
-        img_width = img.shape[1]
+        ret = img is not None
 
         frame_cnt += 1
         #print('-------- frame_cnt: ' + str(frame_cnt) + ' --------')
-        if ret == True:
+        if ret:
             img_rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 
             bounding_box_coordinates = face_detector.predict_face(img_rgb)
