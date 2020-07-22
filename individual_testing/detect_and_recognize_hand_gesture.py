@@ -9,6 +9,7 @@ import time
 # gesture file path (.npy)
 gesture_path = '../data/gesture_data/gesture_encodings/gesture1_1.npy'
 saved_gesture = np.load(gesture_path, allow_pickle=True)
+saved_gesture_name = gesture_path.split('/')[-1].replace(".npy", '')
 
 gesture_score = generate_gesture_score_fn(saved_gesture)
 
@@ -56,7 +57,7 @@ while (True):
             #print(f"gesture score: {gesture_score(Y=kp, reflection=False)}")
 
             if gesture_score(Y=kp, reflection=False) < 0.1:
-                print("Gesture Found")
+                print(f"Gesture Found: {saved_gesture_name}")
             else:
                 print("Wrong Gesture")
 
