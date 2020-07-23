@@ -11,7 +11,3 @@ The project is aimed to provide a better lock system with different user experie
     2. The face recognizer checks if the face is the one saved by the user if it is the face is marked as Matched.
     3. The gesture recognizer will monitor for the specified gesture if it finds it then the gesture is Marked as match.
     4. When Both the Face and The Gesture are matched the system is unlocked.
-
-## Directory Structure
-
-## Acknowledgements
