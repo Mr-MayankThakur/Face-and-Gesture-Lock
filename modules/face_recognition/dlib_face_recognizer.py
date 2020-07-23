@@ -1,4 +1,16 @@
 # source : http://dlib.net/face_recognition.py.html
+"""
+Davis E. King. Dlib-ml: A Machine Learning Toolkit. Journal of Machine Learning Research 10, pp. 1755-1758, 2009
+
+@Article{dlib09,
+  author = {Davis E. King},
+  title = {Dlib-ml: A Machine Learning Toolkit},
+  journal = {Journal of Machine Learning Research},
+  year = {2009},
+  volume = {10},
+  pages = {1755-1758},
+}
+"""
 
 import dlib
 import numpy as np
