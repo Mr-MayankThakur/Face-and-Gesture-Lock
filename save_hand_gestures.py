@@ -48,10 +48,9 @@ for file in glob.glob(gesture_folder_path + "/*.jpg"):
         # box is box coordinates
         kp, box = detector(img_rgb)
 
-        if verbose:
-            # do image drawing here
-            for point in kp.astype(int):
-                cv.circle(img, tuple(point), 5, (255, 0, 0), thickness=-1)
+        # do image drawing here
+        for point in kp.astype(int):
+            cv.circle(img, tuple(point), 5, (255, 0, 0), thickness=-1)
 
         # save gesture
         np.save(f"{gesture_save_path}/{file_name}", kp)
