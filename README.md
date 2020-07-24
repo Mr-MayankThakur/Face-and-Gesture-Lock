@@ -3,6 +3,8 @@
 ## Aim
 The project is aimed to provide a better lock system with different user experience. This lock system uses face recognition and unique air hand gesture as lock key.
 
+![](Demo.mp4)
+
 ## Overview
 1. The user has to set a face and a unique gesture as unlock key.
     1. The user's face is saved in the form of feature vector.
