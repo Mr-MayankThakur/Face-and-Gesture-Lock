@@ -1,9 +1,16 @@
 # Face and Gesture Lock
-
-## Aim
 The project is aimed to provide a better lock system with different user experience. This lock system uses face recognition and unique air hand gesture as lock key.
 
+
+## Aim
+This project is an attempt to provide a unique locking system to the users while also increasing the security.
+
+Ever thought what if someone could show your image or suddenly point the mobile phone to your face just to peep into your private life?... This project is designed just to ensure that never happens to anyone else.
+
+
 ![](Demo.gif)
+
+
 
 ## Overview
 1. The user has to set a face and a unique gesture as unlock key.
@@ -54,5 +61,6 @@ If you have an idea please do more tell me....
 - Only one hand is monitored at a time for Hand Gesture.
 
 ## Special Thanks
+- **[Laurence Moroney](https://www.linkedin.com/in/laurence-moroney/), AI Lead at Google, all this was not possible without his Motivation and Teaching. Respect** :bow:
 
 - **[Suyash Tople](https://www.linkedin.com/in/suyash1999/)** for Testing and Collaboration.
