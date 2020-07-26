@@ -53,8 +53,8 @@ Ever thought what if someone could show your image or suddenly point the mobile 
 - Multiple People can be recognized by the system.
 - We could use different gestures for different tasks while also allowing authorized personal only.
 - Each Person can have Unique Gesture.  
+- There are many more use cases your imagination is the limit.
 
-If you have an idea please do more tell me....
 
 ## Limitations
 
