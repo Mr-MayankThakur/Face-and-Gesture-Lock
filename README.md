@@ -61,6 +61,4 @@ Ever thought what if someone could show your image or suddenly point the mobile 
 - Only one hand is monitored at a time for Hand Gesture.
 
 ## Special Thanks
-- **[Laurence Moroney](https://www.linkedin.com/in/laurence-moroney/), AI Lead at Google, all this was not possible without his Motivation and Teaching. Respect** :bow:
-
 - **[Suyash Tople](https://www.linkedin.com/in/suyash1999/)** for Testing and Collaboration.
